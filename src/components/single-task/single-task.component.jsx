@@ -1,8 +1,9 @@
 import React from "react";
+import "./single-task.component.scss";
 
 function Task({ task, i, filter }) {
   return (
-    <div>
+    <div className="SingleTask">
       <li>{task.task}</li>
       <button
         onClick={() => {

@@ -1,6 +1,7 @@
 import React from "react";
 
 import Task from "../single-task/single-task.component";
+import "./task-manager.component.scss";
 
 class TaskManager extends React.Component {
   constructor(props) {
@@ -20,13 +21,22 @@ class TaskManager extends React.Component {
       () => console.log(this.state)
     );
     e.target[0].value = "";
+    // COLOCAR LIMITE P/ 5 TASKS
+  };
+
+  filterFunc = (index, otherIndex, value) => {
+    if (index !== otherIndex) {
+      return value;
+    }
   };
 
   taskClick = (i) => {
-    let newTasks = this.state.tasks;
-    let result = newTasks.filter(({ task }, j) => task[j] !== task[i]);
+    let newTasks = this.state.tasks.slice();
+    let result = newTasks.filter((task, index) =>
+      this.filterFunc(index, i, task)
+    );
+
     this.setState({ tasks: result });
-    console.log(result);
   };
 
   render() {
@@ -46,8 +56,14 @@ class TaskManager extends React.Component {
             name="taskInput"
             minLength="1"
             required
+            disabled={this.state.tasks.length < 4 ? false : true}
           />
-          <button type="submit">Submit</button>
+          <button
+            type="submit"
+            disabled={this.state.tasks.length < 4 ? false : true}
+          >
+            Submit
+          </button>
         </form>
       </div>
     );

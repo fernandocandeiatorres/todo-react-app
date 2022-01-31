@@ -1,5 +1,6 @@
 import React from "react";
 import TaskManager from "./components/task-manager/task-manager.component";
+import "./App.scss";
 
 class App extends React.Component {
   render() {
