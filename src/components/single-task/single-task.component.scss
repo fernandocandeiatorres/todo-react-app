@@ -21,6 +21,10 @@
     height: 33px;
     box-shadow: 1px 2px 5px rgb(194, 193, 193);
     cursor: pointer;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     &:hover {
       background-color: rgb(226, 223, 223);

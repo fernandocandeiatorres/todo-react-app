@@ -10,7 +10,10 @@ function Task({ task, i, filter }) {
           filter(i);
         }}
       >
-        -
+        <img
+          src="https://img.icons8.com/officexs/16/000000/minus.png"
+          alt="minus"
+        />
       </button>
     </div>
   );

@@ -62,7 +62,10 @@ class TaskManager extends React.Component {
             type="submit"
             disabled={this.state.tasks.length < 4 ? false : true}
           >
-            Submit
+            <img
+              src="https://img.icons8.com/officexs/16/000000/plus.png"
+              alt="plus"
+            />
           </button>
         </form>
       </div>
